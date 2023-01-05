@@ -3,3 +3,20 @@
 This repository contains a simple open source bit of example code for writing
 rows in a link:https://delta.io[Delta table] with
 link:https://github.com/delta-io/delta-rs[the Delta Rust bindings].
+
+You can run this code with:
+
+[source,bash]
+----
+TABLE_URI=demo-tables/wx cargo run
+----
+
+This will write five data points to the delta table stored in the `wx` directory. You can query this with the `deltalake` Python module, for example:
+
+[source, python]
+----
+from deltalake import DeltaTable
+dt = DeltaTable('demo-tables/wx')
+df = dt.to_pandas()
+df.query('temp > 0')
+----
