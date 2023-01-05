@@ -1,0 +1,5 @@
+= Rust `RecordBatch` Writer Demo
+
+This repository contains a simple open source bit of example code for writing
+rows in a link:https://delta.io[Delta table] with
+link:https://github.com/delta-io/delta-rs[the Delta Rust bindings].
